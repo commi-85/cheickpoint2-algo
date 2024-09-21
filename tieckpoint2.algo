@@ -1,0 +1,20 @@
+ALGORITHM algorithm_triParSelection
+VAR
+    tab : ARRAY_OF type[INTEGER]; 
+    i,j,temp : INTEGER;
+
+BEGIN
+    i:= 1;
+    j:=0;
+    temp := 0;
+
+    FOR(i FROM 1 TO tab.length-1)  DO
+        temp:= tab[i];
+        j := i-1;
+        WHILE (j>=0 && tab[j]> temp ) DO
+            tab[j+1]:= tab[j];
+            j:=j-1;
+        END_WHILE
+         tab[j+1]:= temp;
+    END_FOR
+END
